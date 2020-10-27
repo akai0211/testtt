@@ -14,8 +14,9 @@ pipeline {
        }
 
       stage('init Container') {
-          agent {
               withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'artifactory_user', usernameVariable: 'ARTIFACTORY_USER', passwordVariable: 'ARTIFACTORY_TOKEN']]) {              
+          agent {
+
             dockerfile {
               additionalBuildArgs "--build-arg CAI_ARTIFACTORY_TOKEN=${ARTIFACTORY_TOKEN}"
               label 'master'
