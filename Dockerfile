@@ -1,0 +1,8 @@
+FROM alpine
+
+ARG CAI_ARTIFACTORY_TOKEN
+ENV INSTALLED_PKG=${CAI_ARTIFACTORY_TOKEN}
+
+RUN apk update && \
+    apk add ${INSTALLED_PKG}
+# busybox-extras
