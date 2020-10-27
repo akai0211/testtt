@@ -21,7 +21,7 @@ pipeline {
             }
           }
           steps {
-              sh 'echo ${env.JK_CAI_ARTIFACTORY_USER}'
+              sh "echo ${env.JK_CAI_ARTIFACTORY_USER}"
           }
       }
      }
