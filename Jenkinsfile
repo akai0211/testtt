@@ -16,7 +16,7 @@ pipeline {
       stage('init Container') {
           agent {
             dockerfile {
-              additionalBuildArgs "--build-arg CAI_ARTIFACTORY_TOKEN=${env.JK_CAI_ARTIFACTORY_TOKEN}"
+              additionalBuildArgs "--build-arg CAI_ARTIFACTORY_TOKEN=${ARTIFACTORY_TOKEN}"
               label 'master'
             }
           }
